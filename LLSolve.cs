@@ -21,10 +21,19 @@ namespace LongLine
             Complex Zn = new Complex(Rn, Xn);
         }
 
+        public LLine(double Rn, double Xn, double W, double lmd)
+        {
+            this.Rn = Rn;
+            this.Xn= Xn;
+            this.Zn = new Complex(Rn, Xn);
+            this.W = W;
+            this.lmd = lmd;
+        }
+
         public (double[] z, Complex[] U, Complex[] I) Solve(double Un, double l)
         {
             const int N = 1000; //размер массива
-            double dz = l / (N-1);
+            double dz = l * lmd / (N-1);
 
             var z = new double[N];
             var Uz = new Complex[N];

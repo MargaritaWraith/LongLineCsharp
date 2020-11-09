@@ -46,9 +46,13 @@
                     <RowDefinition MinHeight = "100"/>
                     <RowDefinition MinHeight = "100"/>
                 </Grid.RowDefinitions>
-                
-                <oxy:Plot Title="U(z)" Grid.Row="0"/>
-                <oxy:Plot Title="I(z)" Grid.Row="1"/>
+
+                <oxy:PlotView Grid.Row="0" Name="PlotUz">
+
+                </oxy:PlotView>
+                <oxy:Plot Title="I(z)" Grid.Row="1">
+
+                </oxy:Plot>
                 <GridSplitter Grid.Row="1" VerticalAlignment = "Top" Height = "3" HorizontalAlignment = "Stretch"/>
             </Grid>
         </GroupBox>
