@@ -4,24 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LongLine"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight = "150" MinWidth = "200">
+        Title="MainWindow" Height="450" Width="800" MinHeight = "600" MinWidth = "500">
     <DockPanel>
+
         <StackPanel DockPanel.Dock = "Top" Orientation = "Horizontal">
-            <TextBlock Text = "Zn=Rn+jXn" Margin = "5, 3"/>
+            <TextBlock Text = "Zn=Rn+jXn" Margin = "35, 10"/>
+            <TextBlock Margin = "35, 10">
+                Zн =
+                <TextBlock Text = "{Binding Text, ElementName = RnEdit}"/> +
+                j<TextBlock Text = "{Binding Text, ElementName = XnEdit}"/> Ом
+            </TextBlock>
+
+            <!-- <TextBlock Text = "{Binding Text, ElementName = RnEdit}" Margin = "35, 10"/> -->
+            
+            <!-- Показывает размеры окна, collapsed - схлопывает, чтобы не было видно и не занимало места в разметке -->
+            <TextBlock Text = "{Binding Width, RelativeSource = {RelativeSource AncestorType = Window}, StringFormat = 'WindowWidth = {0}'}" Margin = "25, 15" Visibility = "Collapsed"/>
+            <TextBlock Text = "{Binding Height, RelativeSource = {RelativeSource AncestorType = Window}, StringFormat = 'WindowHeight = {0}'}" Margin = "25, 15" Visibility = "Collapsed"/>
+
             <!-- <TextBox Text = "Text11132" Width = "120"/> -->
         </StackPanel>
-        <StackPanel DockPanel.Dock = "Top" Margin = "10">
-            <DockPanel Margin = "5, 3">
-                <TextBlock>Rн = </TextBlock>
-                <TextBox Name = "RnEdit" Width = "150" HorizontalAlignment = "Left">1323</TextBox>
-            </DockPanel>
-            <DockPanel LastChildFill = "False" Margin = "5, 3">
-                <TextBlock>Xн = </TextBlock>
-                <TextBox Name = "XnEdit" Width = "150">1323</TextBox>
-            </DockPanel>
-        </StackPanel>
-        <Button Content = "Ok" Click = "OnClick" Margin = "10,15,25,30"/>
+
+        <DockPanel DockPanel.Dock = "Top" Margin = "20,10">
+            <Button DockPanel.Dock = "Right" Padding = "30,5" Click = "OnClick">Рассчитать</Button>
+            <StackPanel Margin = "10">
+                <DockPanel Margin = "5, 3" LastChildFill = "False">
+                    <TextBlock>Rн = </TextBlock>
+                    <TextBox Name = "RnEdit" Width = "150">1323</TextBox>
+                </DockPanel>
+                <DockPanel LastChildFill = "False" Margin = "5, 3">
+                    <TextBlock>Xн = </TextBlock>
+                    <TextBox Name = "XnEdit" Width = "150">1323</TextBox>
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+
+        <GroupBox Header = "Эпюры" Margin = "20">
+            <Grid ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight = "100"/>
+                    <RowDefinition MinHeight = "100"/>
+                </Grid.RowDefinitions>
+                
+                <oxy:Plot Title="U(z)" Grid.Row="0"/>
+                <oxy:Plot Title="I(z)" Grid.Row="1"/>
+                <GridSplitter Grid.Row="1" VerticalAlignment = "Top" Height = "3" HorizontalAlignment = "Stretch"/>
+            </Grid>
+        </GroupBox>
         
     </DockPanel>
 </Window>
