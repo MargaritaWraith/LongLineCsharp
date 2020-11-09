@@ -34,11 +34,31 @@
             <StackPanel Margin = "10">
                 <DockPanel Margin = "5, 3" LastChildFill = "False">
                     <TextBlock>Rн = </TextBlock>
-                    <TextBox Name = "RnEdit" Width = "150">1323</TextBox>
+                    <TextBox Name = "RnEdit" Width = "150">50</TextBox>
+                    <TextBlock Text="Ом" Margin="5,0"/>
                 </DockPanel>
                 <DockPanel LastChildFill = "False" Margin = "5, 3">
                     <TextBlock>Xн = </TextBlock>
-                    <TextBox Name = "XnEdit" Width = "150">1323</TextBox>
+                    <TextBox Name = "XnEdit" Width = "150">100</TextBox>
+                    <TextBlock Text="Ом" Margin="5,0"/>
+                </DockPanel>
+                <DockPanel Margin = "5, 3" LastChildFill = "False">
+                    <TextBlock>W =</TextBlock>
+                    <TextBox Name = "WEdit" Width = "150">150</TextBox>
+                    <TextBlock Text="Ом" Margin="5,0"/>
+                </DockPanel>
+                
+            </StackPanel>
+            <StackPanel Margin="10">
+                <DockPanel Margin = "5, 3" LastChildFill = "False">
+                    <TextBlock>λ = </TextBlock>
+                    <TextBox Name = "lmdEdit" Width = "150">60</TextBox>
+                    <!--<TextBlock Text="см" Margin="5,0"/>-->
+                </DockPanel>
+                <DockPanel Margin = "5, 3" LastChildFill = "False">
+                    <TextBlock>f =</TextBlock>
+                    <TextBox Name = "fEdit" Width = "150">60</TextBox>
+                    <!--<TextBlock Text="Гц" Margin="5,0"/>-->
                 </DockPanel>
             </StackPanel>
         </DockPanel>

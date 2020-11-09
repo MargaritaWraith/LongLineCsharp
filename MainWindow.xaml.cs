@@ -32,10 +32,17 @@ namespace LongLine
 
         public void OnClick(object sender, EventArgs e)
         {
-            var Zn = new Complex(double.Parse(RnEdit.Text), double.Parse(XnEdit.Text));
-            //MessageBox.Show($"Zн = {Zn.Real} + j{Zn.Imaginary}");
+            if (!double.TryParse(RnEdit.Text, out var Rn) || 
+                !double.TryParse(XnEdit.Text, out var Xn) || 
+                !double.TryParse(WEdit.Text, out var W) ||
+                !double.TryParse(lmdEdit.Text, out var lmd))
+            {
+                MessageBox.Show("Некорректный ввод значений", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            var Zn = new Complex(Rn, Xn);
 
-            var LongLine = new LLine(100, 0, 150, 10);
+            var LongLine = new LLine(Rn, Xn, W, lmd);
             var (z, Uz, Iz) = LongLine.Solve(1, 2);
 
 
