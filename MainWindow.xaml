@@ -1,0 +1,27 @@
+﻿<Window x:Class="LongLine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LongLine"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight = "150" MinWidth = "200">
+    <DockPanel>
+        <StackPanel DockPanel.Dock = "Top" Orientation = "Horizontal">
+            <TextBlock Text = "Zn=Rn+jXn" Margin = "5, 3"/>
+            <!-- <TextBox Text = "Text11132" Width = "120"/> -->
+        </StackPanel>
+        <StackPanel DockPanel.Dock = "Top" Margin = "10">
+            <DockPanel Margin = "5, 3">
+                <TextBlock>Rн = </TextBlock>
+                <TextBox Name = "RnEdit" Width = "150" HorizontalAlignment = "Left">1323</TextBox>
+            </DockPanel>
+            <DockPanel LastChildFill = "False" Margin = "5, 3">
+                <TextBlock>Xн = </TextBlock>
+                <TextBox Name = "XnEdit" Width = "150">1323</TextBox>
+            </DockPanel>
+        </StackPanel>
+        <Button Content = "Ok" Click = "OnClick" Margin = "10,15,25,30"/>
+        
+    </DockPanel>
+</Window>
