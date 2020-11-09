@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:LongLine"
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight = "600" MinWidth = "500">
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Width="1600" Height="1000" MinWidth = "1000" MinHeight = "800"
+        Loaded="OnClick">
+        
     <DockPanel>
 
         <StackPanel DockPanel.Dock = "Top" Orientation = "Horizontal">
@@ -47,12 +50,9 @@
                     <RowDefinition MinHeight = "100"/>
                 </Grid.RowDefinitions>
 
-                <oxy:PlotView Grid.Row="0" Name="PlotUz">
+                <oxy:PlotView Grid.Row="0" Name="PlotUz"/>
+                <oxy:PlotView Grid.Row="1" Name="PlotIz"/>
 
-                </oxy:PlotView>
-                <oxy:Plot Title="I(z)" Grid.Row="1">
-
-                </oxy:Plot>
                 <GridSplitter Grid.Row="1" VerticalAlignment = "Top" Height = "3" HorizontalAlignment = "Stretch"/>
             </Grid>
         </GroupBox>
